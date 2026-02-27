@@ -1,0 +1,112 @@
+name: Scalable Systems
+description: A collection of APIs for building and managing scalable distributed systems
+image: https://example.com/scalable-systems-logo.png
+url: https://scalablesystems.example.com
+created: '2024-01-15'
+modified: '2024-01-15'
+apis:
+- name: Load Balancer API
+  description: API for managing and configuring load balancers across multiple regions
+  image: https://example.com/loadbalancer-icon.png
+  humanUrl: https://scalablesystems.example.com/loadbalancer
+  baseUrl: https://api.scalablesystems.example.com/v1/loadbalancer
+  tags:
+  - load balancing
+  - traffic management
+  - scaling
+  - infrastructure
+  properties:
+  - type: Documentation
+    url: https://docs.scalablesystems.example.com/loadbalancer
+  - type: OpenAPI
+    url: https://api.scalablesystems.example.com/v1/loadbalancer/openapi.json
+  - type: Authentication
+    url: https://docs.scalablesystems.example.com/authentication
+  contact:
+  - FN: Load Balancer Support
+    email: loadbalancer@scalablesystems.example.com
+    organizationName: Scalable Systems
+- name: Auto-Scaling API
+  description: Dynamic resource scaling API for automatically adjusting compute capacity
+  image: https://example.com/autoscaling-icon.png
+  humanUrl: https://scalablesystems.example.com/autoscaling
+  baseUrl: https://api.scalablesystems.example.com/v1/autoscaling
+  tags:
+  - auto-scaling
+  - resource management
+  - capacity planning
+  - automation
+  properties:
+  - type: Documentation
+    url: https://docs.scalablesystems.example.com/autoscaling
+  - type: OpenAPI
+    url: https://api.scalablesystems.example.com/v1/autoscaling/openapi.json
+  - type: Pricing
+    url: https://scalablesystems.example.com/pricing/autoscaling
+  contact:
+  - FN: Auto-Scaling Support
+    email: autoscaling@scalablesystems.example.com
+    organizationName: Scalable Systems
+- name: Service Mesh API
+  description: API for managing service-to-service communication, observability, and security
+  image: https://example.com/servicemesh-icon.png
+  humanUrl: https://scalablesystems.example.com/servicemesh
+  baseUrl: https://api.scalablesystems.example.com/v1/servicemesh
+  tags:
+  - service mesh
+  - microservices
+  - observability
+  - security
+  properties:
+  - type: Documentation
+    url: https://docs.scalablesystems.example.com/servicemesh
+  - type: OpenAPI
+    url: https://api.scalablesystems.example.com/v1/servicemesh/openapi.json
+  - type: Status
+    url: https://status.scalablesystems.example.com/servicemesh
+  contact:
+  - FN: Service Mesh Support
+    email: servicemesh@scalablesystems.example.com
+    organizationName: Scalable Systems
+- name: Distributed Cache API
+  description: High-performance distributed caching system for reducing latency and database load
+  image: https://example.com/cache-icon.png
+  humanUrl: https://scalablesystems.example.com/cache
+  baseUrl: https://api.scalablesystems.example.com/v1/cache
+  tags:
+  - caching
+  - performance
+  - distributed systems
+  - data storage
+  properties:
+  - type: Documentation
+    url: https://docs.scalablesystems.example.com/cache
+  - type: OpenAPI
+    url: https://api.scalablesystems.example.com/v1/cache/openapi.json
+  - type: SDK
+    url: https://github.com/scalablesystems/cache-sdk
+  contact:
+  - FN: Cache Support
+    email: cache@scalablesystems.example.com
+    organizationName: Scalable Systems
+common:
+- type: Portal
+  url: https://portal.scalablesystems.example.com
+- type: Authentication
+  url: https://docs.scalablesystems.example.com/authentication
+- type: Getting Started
+  url: https://docs.scalablesystems.example.com/getting-started
+- type: Blog
+  url: https://blog.scalablesystems.example.com
+- type: Support
+  url: https://support.scalablesystems.example.com
+- type: Terms of Service
+  url: https://scalablesystems.example.com/terms
+- type: Privacy Policy
+  url: https://scalablesystems.example.com/privacy
+- type: Status
+  url: https://status.scalablesystems.example.com
+maintainers:
+- FN: Platform Team
+  email: platform@scalablesystems.example.com
+  organizationName: Scalable Systems
