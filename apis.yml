@@ -13,16 +13,15 @@ apis:
     humanUrl: https://scalablesystems.example.com/loadbalancer
     baseUrl: https://api.scalablesystems.example.com/v1/loadbalancer
     tags:
-      - load balancing
-      - traffic management
-      - scaling
-      - infrastructure
+      - Infrastructure
+      - Load Balancing
+      - Scaling
+      - Traffic Management
     properties:
       - type: Documentation
         url: https://docs.scalablesystems.example.com/loadbalancer
       - type: OpenAPI
-        url: 
-          https://api.scalablesystems.example.com/v1/loadbalancer/openapi.json
+        url: https://api.scalablesystems.example.com/v1/loadbalancer/openapi.json
       - type: Authentication
         url: https://docs.scalablesystems.example.com/authentication
     contact:
@@ -36,10 +35,10 @@ apis:
     humanUrl: https://scalablesystems.example.com/autoscaling
     baseUrl: https://api.scalablesystems.example.com/v1/autoscaling
     tags:
-      - auto-scaling
-      - resource management
-      - capacity planning
-      - automation
+      - Auto-Scaling
+      - Automation
+      - Capacity Planning
+      - Resource Management
     properties:
       - type: Documentation
         url: https://docs.scalablesystems.example.com/autoscaling
@@ -58,10 +57,10 @@ apis:
     humanUrl: https://scalablesystems.example.com/servicemesh
     baseUrl: https://api.scalablesystems.example.com/v1/servicemesh
     tags:
-      - service mesh
-      - microservices
-      - observability
-      - security
+      - Microservices
+      - Observability
+      - Security
+      - Service Mesh
     properties:
       - type: Documentation
         url: https://docs.scalablesystems.example.com/servicemesh
@@ -81,10 +80,10 @@ apis:
     humanUrl: https://scalablesystems.example.com/cache
     baseUrl: https://api.scalablesystems.example.com/v1/cache
     tags:
-      - caching
-      - performance
-      - distributed systems
-      - data storage
+      - Caching
+      - Data Storage
+      - Distributed Systems
+      - Performance
     properties:
       - type: Documentation
         url: https://docs.scalablesystems.example.com/cache
