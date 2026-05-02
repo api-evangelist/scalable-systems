@@ -199,6 +199,9 @@ common:
   - type: Examples
     url: https://github.com/api-evangelist/scalable-systems/blob/main/examples/scalable-systems-rabbitmq-queue-example.json
     name: RabbitMQ Queue Configuration Example
+  - type: Examples
+    url: https://github.com/api-evangelist/scalable-systems/blob/main/examples/scalable-systems-consul-service-registration-example.json
+    name: Consul Service Registration Example
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

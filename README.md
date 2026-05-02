@@ -71,6 +71,7 @@ Advanced REST API for runtime configuration and statistics of upstream server gr
 
 ### Examples
 - [RabbitMQ Queue Configuration](examples/scalable-systems-rabbitmq-queue-example.json) — Example RabbitMQ Management API call for creating a durable queue with dead-letter exchange.
+- [Consul Service Registration](examples/scalable-systems-consul-service-registration-example.json) — Consul API call to register a microservice instance with HTTP and gRPC health checks for service discovery.
 
 ## Common Resources
 

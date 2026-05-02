@@ -1,0 +1,81 @@
+{
+  "example": {
+    "title": "Consul Service Registration and Health Check",
+    "description": "Example Consul API call to register a microservice instance with health checks for service discovery in a scalable distributed system.",
+    "request": {
+      "method": "PUT",
+      "url": "http://localhost:8500/v1/agent/service/register",
+      "headers": {
+        "Content-Type": "application/json",
+        "X-Consul-Token": "{{CONSUL_TOKEN}}"
+      },
+      "body": {
+        "ID": "payment-service-instance-1",
+        "Name": "payment-service",
+        "Tags": ["v2", "production", "payments"],
+        "Address": "10.0.1.42",
+        "Port": 8080,
+        "Meta": {
+          "version": "2.3.1",
+          "region": "us-east-1",
+          "environment": "production"
+        },
+        "Checks": [
+          {
+            "CheckID": "payment-service-http-check",
+            "Name": "HTTP health check",
+            "HTTP": "http://10.0.1.42:8080/healthz",
+            "Interval": "10s",
+            "Timeout": "3s",
+            "DeregisterCriticalServiceAfter": "90s"
+          },
+          {
+            "CheckID": "payment-service-grpc-check",
+            "Name": "gRPC health check",
+            "GRPC": "10.0.1.42:9090",
+            "GRPCUseTLS": false,
+            "Interval": "10s",
+            "Timeout": "3s"
+          }
+        ],
+        "Weights": {
+          "Passing": 10,
+          "Warning": 1
+        }
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": null,
+      "description": "Empty 200 response indicates successful service registration."
+    },
+    "discovery": {
+      "description": "After registration, other services can discover this instance via:",
+      "dnsQuery": "payment-service.service.consul",
+      "httpQuery": "GET http://localhost:8500/v1/health/service/payment-service?passing=true",
+      "response": [
+        {
+          "Node": {
+            "ID": "node-id-uuid",
+            "Node": "worker-node-1",
+            "Address": "10.0.1.42"
+          },
+          "Service": {
+            "ID": "payment-service-instance-1",
+            "Service": "payment-service",
+            "Tags": ["v2", "production", "payments"],
+            "Address": "10.0.1.42",
+            "Port": 8080
+          },
+          "Checks": [
+            {
+              "CheckID": "payment-service-http-check",
+              "Status": "passing",
+              "Output": "HTTP GET http://10.0.1.42:8080/healthz: 200 OK"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
