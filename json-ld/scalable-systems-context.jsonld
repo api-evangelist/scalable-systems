@@ -1,0 +1,51 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@vocab": "https://schema.org/",
+    "api": "https://api-evangelist.com/vocabulary/",
+    "sys": "https://api-evangelist.com/vocabulary/scalable-systems/",
+
+    "DistributedSystem": "sys:DistributedSystem",
+    "CachingLayer": "sys:CachingLayer",
+    "MessageBroker": "sys:MessageBroker",
+    "LoadBalancer": "sys:LoadBalancer",
+    "ServiceRegistry": "sys:ServiceRegistry",
+    "DatabaseCluster": "sys:DatabaseCluster",
+    "AutoScalingGroup": "sys:AutoScalingGroup",
+
+    "name": "schema:name",
+    "description": "schema:description",
+    "url": "schema:url",
+    "documentation": "schema:documentation",
+    "version": "schema:version",
+    "license": "schema:license",
+    "provider": "schema:provider",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+
+    "SoftwareApplication": "schema:SoftwareApplication",
+    "SoftwareSourceCode": "schema:SoftwareSourceCode",
+    "WebAPI": "schema:WebAPI",
+
+    "baseUrl": "api:baseUrl",
+    "apiType": "api:apiType",
+    "authType": "api:authType",
+    "tags": "api:tags",
+
+    "consistencyModel": "sys:consistencyModel",
+    "replicationFactor": "sys:replicationFactor",
+    "partitionStrategy": "sys:partitionStrategy",
+    "ttlSeconds": "sys:ttlSeconds",
+    "evictionPolicy": "sys:evictionPolicy",
+    "quorumSize": "sys:quorumSize",
+    "raftEnabled": "sys:raftEnabled",
+    "sloTarget": "sys:sloTarget",
+    "errorBudget": "sys:errorBudget",
+    "rto": "sys:rto",
+    "rpo": "sys:rpo",
+    "maxQueueDepth": "sys:maxQueueDepth",
+    "deadLetterQueue": "sys:deadLetterQueue",
+    "shardCount": "sys:shardCount",
+    "readReplicaCount": "sys:readReplicaCount"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "example": {
+    "title": "RabbitMQ Queue Configuration",
+    "description": "Example of creating a durable queue with dead-letter exchange via the RabbitMQ Management API.",
+    "request": {
+      "method": "PUT",
+      "url": "http://localhost:15672/api/queues/%2F/orders.processing",
+      "headers": {
+        "Content-Type": "application/json",
+        "Authorization": "Basic Z3Vlc3Q6Z3Vlc3Q="
+      },
+      "body": {
+        "durable": true,
+        "auto_delete": false,
+        "arguments": {
+          "x-dead-letter-exchange": "orders.dlx",
+          "x-dead-letter-routing-key": "orders.dead",
+          "x-message-ttl": 86400000,
+          "x-max-length": 10000
+        }
+      }
+    },
+    "response": {
+      "status": 201,
+      "body": {}
+    }
+  }
+}

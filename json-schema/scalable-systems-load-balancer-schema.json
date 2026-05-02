@@ -1,0 +1,132 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api-evangelist.com/schemas/scalable-systems/load-balancer",
+  "title": "Load Balancer Configuration",
+  "description": "Schema for a load balancer configuration in a scalable distributed system.",
+  "type": "object",
+  "required": ["name", "algorithm", "backends"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Identifier for this load balancer."
+    },
+    "algorithm": {
+      "type": "string",
+      "enum": ["round-robin", "least-connections", "ip-hash", "weighted-round-robin", "random", "leasttime"],
+      "description": "Load balancing algorithm for distributing traffic."
+    },
+    "layer": {
+      "type": "integer",
+      "enum": [4, 7],
+      "description": "OSI layer: 4 = TCP/UDP, 7 = HTTP/HTTPS."
+    },
+    "virtualAddress": {
+      "type": "string",
+      "description": "Virtual IP address or hostname for the load balancer frontend."
+    },
+    "port": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 65535,
+      "description": "Listening port."
+    },
+    "protocol": {
+      "type": "string",
+      "enum": ["http", "https", "tcp", "udp", "grpc"],
+      "description": "Protocol the load balancer handles."
+    },
+    "stickySession": {
+      "type": "object",
+      "description": "Session affinity configuration.",
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "cookieName": {
+          "type": "string",
+          "description": "Cookie name for sticky session routing."
+        },
+        "ttlSeconds": {
+          "type": "integer",
+          "description": "Session affinity duration in seconds."
+        }
+      }
+    },
+    "healthCheck": {
+      "type": "object",
+      "description": "Health check configuration for backend servers.",
+      "required": ["path", "intervalSeconds"],
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "HTTP path for health check.",
+          "example": "/healthz"
+        },
+        "intervalSeconds": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Seconds between health checks."
+        },
+        "timeoutSeconds": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Seconds to wait for health check response."
+        },
+        "healthyThreshold": {
+          "type": "integer",
+          "description": "Consecutive successes required to mark backend healthy."
+        },
+        "unhealthyThreshold": {
+          "type": "integer",
+          "description": "Consecutive failures required to mark backend unhealthy."
+        }
+      }
+    },
+    "backends": {
+      "type": "array",
+      "description": "List of backend server instances.",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["address", "port"],
+        "properties": {
+          "address": {
+            "type": "string",
+            "description": "IP address or hostname of the backend."
+          },
+          "port": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 65535
+          },
+          "weight": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100,
+            "description": "Relative weight for weighted algorithms."
+          },
+          "maxConnections": {
+            "type": "integer",
+            "description": "Maximum concurrent connections to this backend."
+          },
+          "enabled": {
+            "type": "boolean",
+            "default": true
+          }
+        }
+      }
+    },
+    "tlsTermination": {
+      "type": "object",
+      "description": "TLS/SSL termination configuration.",
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "certificatePath": { "type": "string" },
+        "privateKeyPath": { "type": "string" },
+        "minimumTlsVersion": {
+          "type": "string",
+          "enum": ["1.2", "1.3"],
+          "default": "1.2"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,160 @@
+vocabulary:
+  name: Scalable Systems Vocabulary
+  description: >-
+    Domain vocabulary for designing and operating scalable distributed systems,
+    covering load balancing, auto-scaling, caching, message queues, service
+    discovery, and reliability engineering concepts used by SREs, platform
+    engineers, and infrastructure architects.
+  created: '2026-05-02'
+  modified: '2026-05-02'
+  terms:
+    - term: Active-Active
+      definition: >-
+        A high availability configuration where multiple active nodes
+        simultaneously process requests. Provides both redundancy and
+        load distribution. Contrasts with active-passive where a secondary
+        node only takes over upon primary failure.
+      tags:
+        - High Availability
+        - Infrastructure
+    - term: Cache Invalidation
+      definition: >-
+        The process of removing or updating cached entries when the underlying
+        data changes. One of the hardest problems in distributed systems.
+        Strategies include TTL (time-to-live), write-through, write-behind,
+        and event-driven invalidation.
+      tags:
+        - Caching
+        - Data Management
+    - term: CAP Theorem
+      definition: >-
+        A theorem stating that a distributed system can guarantee at most two
+        of three properties simultaneously: Consistency (all nodes see the
+        same data), Availability (every request gets a response), and
+        Partition Tolerance (system continues despite network partitions).
+      tags:
+        - Distributed Systems
+        - Theory
+    - term: Consensus
+      definition: >-
+        A fundamental problem in distributed computing: getting multiple nodes
+        to agree on a single value or decision despite failures. Algorithms
+        include Raft (used in etcd, Consul) and Paxos. Critical for
+        distributed coordination and leader election.
+      tags:
+        - Distributed Systems
+        - Algorithm
+    - term: Dead Letter Queue (DLQ)
+      definition: >-
+        A message queue where messages that cannot be successfully processed
+        are stored for later analysis or reprocessing. Prevents message loss
+        and enables debugging of processing failures in event-driven systems.
+      tags:
+        - Message Queues
+        - Resilience
+    - term: Eventual Consistency
+      definition: >-
+        A consistency model where replicas of the same data will eventually
+        converge to the same value, given no new updates. Allows higher
+        availability and partition tolerance at the cost of temporary
+        inconsistency. Used in systems like DynamoDB, Cassandra.
+      tags:
+        - Data Consistency
+        - Distributed Systems
+    - term: Failover
+      definition: >-
+        The automatic or manual switching of a workload to a redundant backup
+        system upon primary system failure. Can be within a datacenter
+        (instance failover) or across regions (regional failover). Measured
+        by RTO (Recovery Time Objective).
+      tags:
+        - High Availability
+        - Resilience
+    - term: Idempotency Key
+      definition: >-
+        A unique identifier included in a request that allows a server to
+        recognize and discard duplicate requests. Critical for safe retries
+        in payment systems and other state-changing operations in distributed
+        systems.
+      tags:
+        - API Design
+        - Data Consistency
+    - term: Leader Election
+      definition: >-
+        A distributed algorithm that designates one process among a group as
+        the leader responsible for coordinating shared tasks. Used in etcd,
+        ZooKeeper, and Consul to prevent split-brain scenarios in clustered
+        applications.
+      tags:
+        - Distributed Systems
+        - Algorithm
+    - term: Message Broker
+      definition: >-
+        Middleware that enables asynchronous communication between services
+        by receiving messages from producers and routing them to consumers.
+        Decouples services and absorbs traffic spikes. Examples: Kafka,
+        RabbitMQ, AWS SQS, NATS, Apache Pulsar.
+      tags:
+        - Integration
+        - Message Queues
+    - term: Queue Depth
+      definition: >-
+        The number of messages waiting to be processed in a message queue.
+        A key metric for auto-scaling decisions — high queue depth triggers
+        additional consumer instances; zero queue depth triggers scale-in.
+      tags:
+        - Message Queues
+        - Scaling
+    - term: Read Replica
+      definition: >-
+        A copy of a database that handles read operations, reducing load
+        on the primary write node. Enables horizontal scaling of database
+        reads. Data may be slightly behind primary (replication lag).
+        Supported by PostgreSQL, MySQL, Redis, DynamoDB.
+      tags:
+        - Database
+        - Scaling
+    - term: Replication
+      definition: >-
+        The process of copying data across multiple nodes or locations to
+        ensure data availability and fault tolerance. Can be synchronous
+        (strong consistency) or asynchronous (eventual consistency).
+        Managed by databases, cache clusters, and message brokers.
+      tags:
+        - Data Management
+        - Distributed Systems
+    - term: Service Level Objective (SLO)
+      definition: >-
+        A target value or range for a service level indicator (SLI) such
+        as availability, latency, or error rate. SLOs define acceptable
+        performance thresholds. Error budgets measure how close a system
+        is to violating its SLO.
+      tags:
+        - Operations
+        - SRE
+    - term: Sharding
+      definition: >-
+        A horizontal database scaling technique that partitions data across
+        multiple database instances (shards), each holding a subset of the
+        data. Each shard handles reads and writes for its partition, enabling
+        linear scalability beyond a single machine's capacity.
+      tags:
+        - Database
+        - Scaling
+    - term: Sticky Session
+      definition: >-
+        A load balancing configuration that routes all requests from a
+        specific client to the same backend server, ensuring session state
+        consistency. Reduces scalability but necessary when applications
+        store state locally. Best replaced with distributed session stores.
+      tags:
+        - Load Balancing
+        - Session Management
+    - term: Write-Ahead Log (WAL)
+      definition: >-
+        A durability technique where changes are written to a sequential log
+        before being applied to the database. Used by PostgreSQL, Kafka (as
+        commit log), and etcd. Enables crash recovery and streaming replication.
+      tags:
+        - Database
+        - Distributed Systems

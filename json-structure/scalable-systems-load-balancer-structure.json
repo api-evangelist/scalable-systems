@@ -1,0 +1,60 @@
+{
+  "structure": {
+    "name": "Load Balancer Configuration",
+    "description": "Structural documentation for a load balancer configuration in a scalable distributed system.",
+    "fields": [
+      { "name": "name", "type": "string", "required": true, "description": "Load balancer identifier" },
+      { "name": "algorithm", "type": "enum[round-robin,least-connections,ip-hash,weighted-round-robin,random,leasttime]", "required": true },
+      { "name": "layer", "type": "enum[4,7]", "required": false, "description": "OSI layer (4=TCP, 7=HTTP)" },
+      { "name": "virtualAddress", "type": "string", "required": false, "description": "Frontend VIP or hostname" },
+      { "name": "port", "type": "integer", "required": false, "description": "Listening port (1-65535)" },
+      { "name": "protocol", "type": "enum[http,https,tcp,udp,grpc]", "required": false },
+      {
+        "name": "stickySession",
+        "type": "object",
+        "required": false,
+        "fields": [
+          { "name": "enabled", "type": "boolean", "required": false },
+          { "name": "cookieName", "type": "string", "required": false },
+          { "name": "ttlSeconds", "type": "integer", "required": false }
+        ]
+      },
+      {
+        "name": "healthCheck",
+        "type": "object",
+        "required": false,
+        "fields": [
+          { "name": "path", "type": "string", "required": true, "description": "HTTP path for health probe" },
+          { "name": "intervalSeconds", "type": "integer", "required": true },
+          { "name": "timeoutSeconds", "type": "integer", "required": false },
+          { "name": "healthyThreshold", "type": "integer", "required": false },
+          { "name": "unhealthyThreshold", "type": "integer", "required": false }
+        ]
+      },
+      {
+        "name": "backends",
+        "type": "array<object>",
+        "required": true,
+        "description": "Backend server list",
+        "itemFields": [
+          { "name": "address", "type": "string", "required": true },
+          { "name": "port", "type": "integer", "required": true },
+          { "name": "weight", "type": "integer", "required": false },
+          { "name": "maxConnections", "type": "integer", "required": false },
+          { "name": "enabled", "type": "boolean", "required": false }
+        ]
+      },
+      {
+        "name": "tlsTermination",
+        "type": "object",
+        "required": false,
+        "fields": [
+          { "name": "enabled", "type": "boolean", "required": false },
+          { "name": "certificatePath", "type": "string", "required": false },
+          { "name": "privateKeyPath", "type": "string", "required": false },
+          { "name": "minimumTlsVersion", "type": "enum[1.2,1.3]", "required": false }
+        ]
+      }
+    ]
+  }
+}
