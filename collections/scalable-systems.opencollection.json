@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS Application Auto Scaling API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ApplicationAutoScaling",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Application Auto Scaling action dispatcher",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://application-autoscaling.{region}.amazonaws.com/",
+            "headers": [
+              {
+                "name": "X-Amz-Target",
+                "value": ""
+              },
+              {
+                "name": "Content-Type",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "All Application Auto Scaling actions are HTTPS POST requests against\nthe regional endpoint root. The action name is supplied via the\n`X-Amz-Target` header in the form\n`AnyScaleFrontendService.{ActionName}`. The list of supported actions\nappears in the `X-Amz-Target` header parameter enum below.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
