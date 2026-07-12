@@ -169,6 +169,12 @@ apis:
       - type: Documentation
         url: https://nginx.org/en/docs/http/ngx_http_api_module.html
 common:
+  - type: VulnerabilityDisclosure
+    url: security/scalable-systems-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/scalable-systems-domain-security.yml
+  - type: Authentication
+    url: authentication/scalable-systems-authentication.yml
   - type: Guide
     url: https://www.nginx.com/resources/glossary/load-balancing/
     name: Load Balancing Explained
