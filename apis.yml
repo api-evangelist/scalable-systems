@@ -169,6 +169,8 @@ apis:
       - type: Documentation
         url: https://nginx.org/en/docs/http/ngx_http_api_module.html
 common:
+  - type: AgenticAccess
+    url: agentic-access/scalable-systems-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/scalable-systems-vulnerability-disclosure.yml
   - type: DomainSecurity
