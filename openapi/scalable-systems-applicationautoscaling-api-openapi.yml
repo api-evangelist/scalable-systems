@@ -1,63 +1,80 @@
 openapi: 3.1.0
 info:
-  title: AWS Application Auto Scaling API
-  description: |
-    The AWS Application Auto Scaling API lets you register and manage scalable
+  title: AWS Application Auto Scaling ApplicationAutoScaling API
+  description: 'The AWS Application Auto Scaling API lets you register and manage scalable
+
     targets (DynamoDB, ECS, Aurora, ElastiCache, Lambda provisioned concurrency,
+
     SageMaker endpoints, AppStream fleets, EMR, Keyspaces, Neptune, MSK, Spot
+
     Fleet, WorkSpaces, and custom resources), configure scaling policies and
+
     scheduled actions, and inspect scaling activity. It is an AWS query API
+
     transported over HTTPS POST to a regional endpoint, with requests signed
+
     using AWS Signature v4. This file is an API Evangelist research artifact
+
     for the scalable-systems topic.
-  version: "1.0.0"
+
+    '
+  version: 1.0.0
   contact:
     name: API Evangelist
     url: https://apievangelist.com
 servers:
-  - url: https://application-autoscaling.{region}.amazonaws.com
-    description: Regional Application Auto Scaling endpoint
-    variables:
-      region:
-        default: us-east-1
-        description: AWS region
+- url: https://application-autoscaling.{region}.amazonaws.com
+  description: Regional Application Auto Scaling endpoint
+  variables:
+    region:
+      default: us-east-1
+      description: AWS region
 security:
-  - SigV4: []
+- SigV4: []
+tags:
+- name: ApplicationAutoScaling
 paths:
   /:
     post:
       summary: Application Auto Scaling action dispatcher
-      description: |
-        All Application Auto Scaling actions are HTTPS POST requests against
+      description: 'All Application Auto Scaling actions are HTTPS POST requests against
+
         the regional endpoint root. The action name is supplied via the
+
         `X-Amz-Target` header in the form
+
         `AnyScaleFrontendService.{ActionName}`. The list of supported actions
+
         appears in the `X-Amz-Target` header parameter enum below.
+
+        '
       operationId: invokeAction
-      tags: [ApplicationAutoScaling]
+      tags:
+      - ApplicationAutoScaling
       parameters:
-        - name: X-Amz-Target
-          in: header
-          required: true
-          schema:
-            type: string
-            enum:
-              - AnyScaleFrontendService.RegisterScalableTarget
-              - AnyScaleFrontendService.DeregisterScalableTarget
-              - AnyScaleFrontendService.DescribeScalableTargets
-              - AnyScaleFrontendService.PutScalingPolicy
-              - AnyScaleFrontendService.DeleteScalingPolicy
-              - AnyScaleFrontendService.DescribeScalingPolicies
-              - AnyScaleFrontendService.PutScheduledAction
-              - AnyScaleFrontendService.DeleteScheduledAction
-              - AnyScaleFrontendService.DescribeScheduledActions
-              - AnyScaleFrontendService.DescribeScalingActivities
-        - name: Content-Type
-          in: header
-          required: true
-          schema:
-            type: string
-            enum: [application/x-amz-json-1.1]
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - AnyScaleFrontendService.RegisterScalableTarget
+          - AnyScaleFrontendService.DeregisterScalableTarget
+          - AnyScaleFrontendService.DescribeScalableTargets
+          - AnyScaleFrontendService.PutScalingPolicy
+          - AnyScaleFrontendService.DeleteScalingPolicy
+          - AnyScaleFrontendService.DescribeScalingPolicies
+          - AnyScaleFrontendService.PutScheduledAction
+          - AnyScaleFrontendService.DeleteScheduledAction
+          - AnyScaleFrontendService.DescribeScheduledActions
+          - AnyScaleFrontendService.DescribeScalingActivities
+      - name: Content-Type
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - application/x-amz-json-1.1
       requestBody:
         required: true
         content:
