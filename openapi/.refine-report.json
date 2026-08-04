@@ -1,0 +1,14 @@
+{
+  "provider": "scalable-systems",
+  "sources": [
+    "scalable-systems-applicationautoscaling-api-openapi.yml"
+  ],
+  "outputs": [
+    "scalable-systems-applicationautoscaling-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
