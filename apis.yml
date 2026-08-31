@@ -34,7 +34,7 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/scalable-systems.png
 tags:
-  - Auto-Scaling
+  - Auto Scaling
   - Caching
   - Cloud Infrastructure
   - Distributed Systems
@@ -69,7 +69,7 @@ apis:
     including EC2, ECS, Lambda, DynamoDB, and Aurora. The API enables defining scaling policies, target
     tracking, and scheduled scaling for systems that must respond to variable load.
   tags:
-  - Auto-Scaling
+  - Auto Scaling
   - AWS
   - Cloud Infrastructure
   - Scalable Architecture
