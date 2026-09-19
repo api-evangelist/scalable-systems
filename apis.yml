@@ -42,7 +42,7 @@ tags:
   - High Availability
   - Infrastructure
   - Load Balancing
-  - Message Queues
+  - Message Queue
   - Platform Engineering
   - Scalable Architecture
   - Service Discovery
@@ -141,6 +141,11 @@ apis:
     tool that exposes an HTTP API for inspecting workers, tasks, queues, and scheduled jobs in production
     systems.
   tags:
+  - Asynchronous
+  - Distributed Systems
+  - Message Queue
+  - Task Queue
+  tags_raw:
   - Asynchronous
   - Distributed Systems
   - Message Queues
