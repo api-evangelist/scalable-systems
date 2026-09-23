@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: AWS Application Auto Scaling ApplicationAutoScaling API
+  title: AWS Application Auto Scaling API
   description: 'The AWS Application Auto Scaling API lets you register and manage scalable
 
     targets (DynamoDB, ECS, Aurora, ElastiCache, Lambda provisioned concurrency,
@@ -9,15 +9,7 @@ info:
 
     Fleet, WorkSpaces, and custom resources), configure scaling policies and
 
-    scheduled actions, and inspect scaling activity. It is an AWS query API
-
-    transported over HTTPS POST to a regional endpoint, with requests signed
-
-    using AWS Signature v4. This file is an API Evangelist research artifact
-
-    for the scalable-systems topic.
-
-    '
+    scheduled actions, and inspect scaling activity.'
   version: 1.0.0
   contact:
     name: API Evangelist
@@ -45,9 +37,7 @@ paths:
 
         `AnyScaleFrontendService.{ActionName}`. The list of supported actions
 
-        appears in the `X-Amz-Target` header parameter enum below.
-
-        '
+        appears in the `X-Amz-Target` header parameter enum below.'
       operationId: invokeAction
       tags:
       - ApplicationAutoScaling
