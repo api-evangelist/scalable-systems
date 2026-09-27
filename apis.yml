@@ -1,5 +1,6 @@
 aid: scalable-systems
 name: Scalable Systems
+kind: topic
 description: >-
   A topic collection focused on APIs, tools, and platforms for designing and
   operating scalable distributed systems. Covers load balancing, auto-scaling,
@@ -10,14 +11,22 @@ description: >-
   production environments.
 deliveryModel:
   model: unknown
-  open_source: false
+  license_evidence:
+    not_product:
+    - celery/celery
+    - etcd-io/etcd
+    - haproxytech/dataplaneapi
+    - hashicorp/consul
+    - rabbitmq/rabbitmq-server
+  open_source: unknown
   commercial: false
   callable_host: true
   label: Delivery model not determined — needs a product licence on record
   confidence: low
   source:
   - openapi
-  generated: '2026-08-28'
+  - repository-not-product
+  generated: '2026-09-25'
   method: derived
 accessModel:
   pricing: freemium
