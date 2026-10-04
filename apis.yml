@@ -199,6 +199,9 @@ apis:
   - type: GitHub
     url: https://github.com/rabbitmq/rabbitmq-server
 common:
+  - type: CapabilityMap
+    url: capabilities/scalable-systems-capability-edges.yml
+    name: Scalable Systems Business Capability Map
   - type: AgenticAccess
     url: agentic-access/scalable-systems-agentic-access.yml
   - type: VulnerabilityDisclosure
