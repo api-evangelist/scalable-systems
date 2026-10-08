@@ -199,6 +199,12 @@ apis:
   - type: GitHub
     url: https://github.com/rabbitmq/rabbitmq-server
 common:
+  - type: Plans
+    url: plans/scalable-systems-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/scalable-systems-rate-limits.yml
+  - type: FinOps
+    url: finops/scalable-systems-finops.yml
   - type: CapabilityMap
     url: capabilities/scalable-systems-capability-edges.yml
     name: Scalable Systems Business Capability Map
